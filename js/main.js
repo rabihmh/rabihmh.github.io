@@ -38,7 +38,11 @@
   // Contact form validator
   $(function () {
     $("#contact-form").validator();
-
+  });
+  /*   $("#contact-form").on("submit", function () {
+   
+  }); */
+  /*
     $("#contact-form").on("submit", function (e) {
       if (!e.isDefaultPrevented()) {
         var url = "/contact_form/contact_form.php";
@@ -66,7 +70,7 @@
         return false;
       }
     });
-  });
+  }); */
   // /Contact form validator
 
   // Hide Mobile menu

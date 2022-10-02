@@ -524,8 +524,7 @@
                       </div>
                       <form
                         id="contact-form"
-                        method="post"
-                        action="/contact_form/contact_form.php"
+                        onsubmit="sendMail();reset(); return false;"
                       >
                         <div class="messages"></div>
 
@@ -624,6 +623,29 @@
     ></script>
     <!--     <script src="https://maps.googleapis.com/maps/api/js"></script>-->
     <script type="text/javascript" src="js/jquery.googlemap.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+      function sendMail() {
+        let name = document.getElementById("form_name").value;
+        let message = document.getElementById("form_message").value;
+        let email = document.getElementById("form_email").value;
+        Email.send({
+          Host: "smtp.elasticemail.com",
+          Username: "rabihmahmoud772@gmail.com",
+          Password: "723DC48D4D48679073EAC13EA7F713E785CF",
+          To: "admin@rabihmh.me",
+          From: "rabihmahmoud772@gmail.com",
+          Subject: "New Contact From Enquiry",
+          Body:
+            "Name :" +
+            name +
+            "<br> Email : " +
+            email +
+            "<br> Message : " +
+            message,
+        }).then((message) => alert(message));
+      }
+    </script>
     <script type="text/javascript" src="js/main.js"></script>
   </body>
 </html>
